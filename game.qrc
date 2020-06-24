@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/game"/>
+    <qresource prefix="/man">
+        <file alias="forward">子图_2_png/1.png</file>
+    </qresource>
+    <qresource prefix="/back">
+        <file alias="woodfloor">分割图片@凡科快图_1590672374/img-3.png</file>
+        <file alias="grass">分割图片@凡科快图_1590672374/img-9.png</file>
+        <file alias="grass2">分割图片@凡科快图_1590672374/img-24.png</file>
+    </qresource>
+</RCC>
