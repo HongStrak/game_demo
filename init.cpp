@@ -3,6 +3,7 @@
 #include "ui_game.h"
 
 void game::init() {
+	
 	ui.setupUi(this);
 
 	//设置mainlab中的属性

@@ -5,6 +5,8 @@
 #include <qlabel.h>
 #include "unit.h"
 #include "myLab.h"
+#include "qdebug.h"
+#include "hero.h"
 
 class game : public QMainWindow
 {
@@ -15,12 +17,13 @@ public:
 	myLab* hero = new myLab;
 
 	static int fps_num_ctrl;
+	static int unitSize;
 private:
 	Ui::gameClass ui;
 	void setPic(QLabel* lab, QString str);
 
 	//单元格大小设置
-	int unitSize = 30;
+	
 	int widthNum = 20;
 	int heightNum = 14;
 	int width = widthNum * unitSize;

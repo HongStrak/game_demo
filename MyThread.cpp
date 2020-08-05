@@ -1,12 +1,12 @@
 #include "MyThread.h"
 #include "qdebug.h"
 
+MyThread::MyThread(MyRunable *Runable) {
+	this->Runable = Runable;
+}
 MyThread::MyThread() {}
 
 void MyThread::run() {
-	for (size_t i = 0; i < 5; i++)
-	{
-		qDebug() << i << endl;
-		msleep(1000);
-	}
+	this->Runable->run();
 }
+

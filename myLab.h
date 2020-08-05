@@ -1,5 +1,8 @@
 #pragma once
 #include "qlabel.h"
+
+
+
 class myLab :public QLabel {
 	Q_OBJECT
 public:
@@ -10,10 +13,9 @@ public:
 	int getX();
 	int getY();
 	myLab *hero;
-	void moveRight();
+	void moveOn(int x , int y);
 protected:
 	virtual void mouseReleaseEvent(QMouseEvent* e);
-private:
 	int x;
 	int y;
 signals:
@@ -22,3 +24,4 @@ signals:
 private slots:
 	void destination(myLab *);
 };
+

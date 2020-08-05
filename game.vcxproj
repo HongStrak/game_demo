@@ -81,6 +81,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="hero.cpp" />
     <ClCompile Include="init.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="myLab.cpp" />
@@ -98,6 +99,8 @@
     <QtRcc Include="game.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="hero.h" />
+    <ClInclude Include="MyRunable.h" />
     <ClInclude Include="MyThread.h" />
     <ClInclude Include="unit.h" />
   </ItemGroup>

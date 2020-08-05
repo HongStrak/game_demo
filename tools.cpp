@@ -3,6 +3,7 @@
 #include "qsettings.h"
 #include "unit.h"
 #include "myLab.h"
+#include "hero.h"
 
 
 //label 设置图片
@@ -38,6 +39,7 @@ void game::setOption(QString group, QString key, QString value) {
 	settings.endGroup();
 }
 
+//得到配置文件的配置  返回估计是qstring
 QVariant game::getOption(QString key) {
 	QSettings settingsread("Option.ini", QSettings::IniFormat);
 	return settingsread.value("default/" + key);
@@ -48,16 +50,19 @@ QVariant game::getOption(QString group, QString key) {
 	return settingsread.value(group + "/" + key);
 }
 
+//绑定鼠标点击的信号值和槽函数
 void myLab::mouseReleaseEvent(QMouseEvent* e) {
 	Q_UNUSED(e);
 	emit clicked(this);
 }
 
+//每个单元格的点击事件
 void myLab::destination(myLab *lab)
 {
 	qDebug() << "x is " << lab->getX() << ", y is " << lab->getY() << endl;
 	qDebug() << "hero x is " << QString::number(lab->hero->getX()) << endl;
-	lab->hero->moveRight();
+	//lab->hero->moveRight();
+	// 1、添加线程    2、每次点击后要等待原子移动一格执行完  3、然后在使用跟换MyRunable  4、重新启动线程
 }
 
 myLab::myLab(QWidget* parent):QLabel(parent) {
